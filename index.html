@@ -3,35 +3,80 @@
   <head>
     <meta charset="utf-8">
     <title>Make Cookies</title>
+    <link rel = "stylesheet"  type="text/css"href="styles.css">
   </head>
   <body>
-    <h1 id="cookie-counter">0</h1>
-    <button id="cookie-clicker">Make Cookies</button>
+    <header>
+      <h1 id="cookie-counter">0</h1>
+      <button id="cookie-clicker">Make Cookies</button>
+    </header>
 
-    <hr>
-        <h2>Shop</h2>
-    <hr>
+    <div class = "title">
+      <hr>
+          <h2>SHOP</h2>
+      <hr>
+    </div>
 
-    <p>Click Power</p>
-    <p>Produces <span id="click-power-multiple">1</span> cookie(s) per click</p>
-    <button id="buy-click-power">Buy for <span id="click-power-price">50</span></button>
-    <p>level: <span id="click-power-level">1</span></p>
+    <div class = "items">
+      <div class = "item">
+        <h4>Click Power</h4>
+        <p class = "level">level: <span id="click-power-level">1</span></p>
+        <p>Produces <span id="click-power-multiple">1</span> cookie(s) per click</p>
+        <button id="buy-click-power">Buy for <span id="click-power-price">50</span></button>
+        
+      </div>
 
-    <!---GRANDMAS-->
-    <hr>
-    <p>Grandmas</p>
-    <p>Producing <span id="grandma-multiple">0</span> cookies per second!</p>
-    <button id="buy-grandma">Buy for <span id="grandma-price">500</span></button>
-    <p>Level: <span id="grandma-level">0</span></p>
+      <!---GRANDMAS-->
+      <div class = "item">
+        
+        <h4>Grandmas</h4>
+        <p class = "level">Level: <span id="grandma-level">0</span></p>
+        <p>Producing <span id="grandma-multiple">0</span> cookies per second!</p>
+        <button id="buy-grandma">Buy for <span id="grandma-price">500</span></button>
+        
+      </div>
 
-    <!--Cookie Manufacturing Facility-->
-    <hr>
-    <p>Cookie Manufacturing Facility</p>
-    <p>Producing <span id="facility-multiple">0</span> cookies per second!</p>
-    <button id="buy-facility">Buy for <span id="facility-price">100000</span></button>
-    <p>Level: <span id="facility-level">0</span></p>
+      <!--Cookie Manufacturing Facility-->
+      <div class = "item">
+        
+        <h4>Cookie Manufacturing Facility</h4>
+        <p class = "level">Level: <span id="facility-level">0</span></p>
+        <p>Producing <span id="facility-multiple">0</span> cookies per second!</p>
+        <button id="buy-facility">Buy for <span id="facility-price">100000</span></button>
+        
+      </div>
+
+      <!--Cookie Doubler-->
+      <div class = "item">
+          <h4>Cookie Doubler</h4>
+          <p class = "level">Level: <span id="doubler-level">0</span></p>
+          <p>Doubles current cookies</p>
+          <button id="buy-doubler">Buy for <span id="doubler-price">1999</span></button>
+          
+      </div>
+
+      <!--Zombie Cookie Maker-->
+      <div class = "item">
+          <h4>Zombie Cookie Maker</h4>
+          <p class = "level">Level: <span id="zombie-level">0</span></p>
+          <p>Eats a few and makes a few</p>
+          <button id="buy-zombie">Buy for <span id="zombie-price">2999</span></button>
+          
+      </div>
+
+      <!--Zombie Cookie Maker-->
+      <div class = "item">
+          <h4>Some BunBun Cookies</h4>
+          <p class = "level">Level: <span id="bunbun-level">0</span></p>
+          <p>Makes and makes and makes. Producing <span id="bunbun-multiple">0</span> cookies</span></button></p>
+          <button id="buy-bunbun">Buy for <span id="bunbun-price">9999999</span></button>
+          
+      </div>
+
+    </div>
 
     <!-- Javascript -->
     <script src="./scripts.js"></script>
+    
   </body>
 </html>

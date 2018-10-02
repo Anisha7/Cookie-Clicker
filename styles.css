@@ -1,0 +1,60 @@
+body {
+    margin: 5%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: black;
+    color: white;
+}
+
+button {
+    padding: 20px;
+    width: 100%;
+    margin-top: 20px;
+    background-color: rgb(116, 48, 48);
+    color: white;
+    font-size: 14px;
+}
+
+#cookie-counter {
+    text-align: center;
+    font-size: 60px;
+    margin-bottom: 0;
+}
+
+#cookie-clicker {
+    margin-bottom: 20px;
+    background-color: maroon;
+    font-size: 20px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    color: black;
+    
+}
+
+.item {
+    border: 1px solid lightgray;
+    padding: 30px;
+    margin: 10px;
+    background-color: bisque;
+}
+
+.item.level, h4 {
+    display: inline;
+    
+}
+
+.level {
+    float: right;
+    margin: 0;
+}
+
+h4 {
+    font-size: 20px;
+}
