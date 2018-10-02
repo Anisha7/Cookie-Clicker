@@ -130,3 +130,67 @@ buyGrandma.addEventListener("click", function() {
   
   }
 });
+
+/********************************
+
+          Facilities
+
+********************************/
+
+//set default variables
+let facilityAuto = false;
+let facilityPower = 2000;
+let facilityPriceAmount = 100000;
+let facilityLevelNumber = 0;
+
+//declare DOM variables
+let buyFacility = document.getElementById('buy-facility');
+let facilityPrice = document.getElementById('facility-price');
+let facilityLevel = document.getElementById('facility-level');
+let facilityMultiple = document.getElementById('facility-multiple');
+
+let refreshFacility = function() {
+    facilityLevel.innerHTML = facilityLevelNumber
+    facilityPrice.innerHTML = facilityPriceAmount;
+    facilityMultiple.innerHTML = facilityPower - 600;
+}
+
+let autoFacilityStart = function() {
+    let facilityInt = window.setInterval(function(){
+        cookieCount += facilityPower;
+        refreshCookieCount();
+    }, 1000);
+}
+
+//buy a facility
+buyFacility.addEventListener("click", function() {
+    //set autoLoop to false
+    facilityAuto = false;
+
+    //make sure we have enough cookies
+    if (cookieCount >= facilityPriceAmount) {
+        cookieCount -= facilityPriceAmount;
+        refreshCookieCount()
+
+    //upgrade power level
+    facilityLevelNumber += 1;
+
+    //update price
+    facilityPriceAmount = Math.floor(facilityPriceAmount * 1.33);
+
+    //update facility power
+    facilityPower += 600;
+
+    //turn autoFacility on!
+    facilityAuto = true
+    autoFacilityStart();
+
+    //refresh shop item
+    refreshFacility();
+
+  }
+})
+
+//game loop
+
+//refresh shop
