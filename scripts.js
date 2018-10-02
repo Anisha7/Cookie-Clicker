@@ -6,6 +6,7 @@
 
 //declare default variables
 let cookieCount = 0;
+let clickPower = 30;
 
 //declare DOM variables
 let cookieCounter = document.getElementById('cookie-counter');
@@ -28,7 +29,6 @@ let refreshCookieCount = function() {
 ********************************/
 
 //declare default variables
-let clickPower = 1;
 let clickPowerPriceAmount = 50;
 let clickPowerLevelNumber = 1;
 
@@ -61,11 +61,72 @@ buyClickPower.addEventListener("click", function() {
     } else {
         console.log("You don't have enough cookies!");
     }
-    })
+})
 
-    let refreshPowerClick = function() {
-        clickPowerLevel.innterHTML = clickPowerLevelNumber;
-        clickPowerPrice.innerHTML = clickPowerPriceAmount;
-        clickPowerMultiple.innerHTML = clickPower;
-    }
+let refreshPowerClick = function() {
+    clickPowerLevel.innterHTML = clickPowerLevelNumber;
+    clickPowerPrice.innerHTML = clickPowerPriceAmount;
+    clickPowerMultiple.innerHTML = clickPower;
+}
     
+
+let autoGrandmaStart = function() {
+    let grandmaInt = window.setInterval(function(){
+      cookieCount += grandmaPower;
+      refreshCookieCount();
+    }, 1000);
+  }
+
+
+/********************************
+
+          Grandmas
+
+********************************/
+
+//set default values
+let grandmaAuto = false;
+let grandmaPower = 50;
+let grandmaPriceAmount = 500;
+let grandmaLevelNumber = 0;
+
+//declare DOM variables
+let buyGrandma = document.getElementById('buy-grandma');
+let grandmaPrice = document.getElementById('grandma-price');
+let grandmaLevel = document.getElementById('grandma-level');
+let grandmaMultiple = document.getElementById('grandma-multiple');
+
+let refreshGrandma = function() {
+    grandmaLevel.innerHTML = grandmaLevelNumber
+    grandmaPrice.innerHTML = grandmaPriceAmount;
+    grandmaMultiple.innerHTML = grandmaPower;
+    grandmaMultiple.innerHTML = grandmaPower - 10;
+  }
+
+//buy a grandma
+buyGrandma.addEventListener("click", function() {
+
+    //make sure we have enough cookies and subtract our cookies from the price
+    if (cookieCount >= grandmaPriceAmount) {
+        // Subtract cookies from the price of the item.
+        cookieCount +=  - grandmaPriceAmount;
+        refreshCookieCount()
+  
+    //upgrade power level
+    grandmaLevelNumber += 1;
+  
+    //update price
+    grandmaPriceAmount = Math.floor(grandmaPriceAmount * 1.33);
+  
+    //update grandma power
+    grandmaPower += 10;
+  
+    //turn autoGrandma on!
+    autoGrandma = true
+    autoGrandmaStart();
+  
+    //refresh shop item
+    refreshGrandma();
+  
+  }
+});
